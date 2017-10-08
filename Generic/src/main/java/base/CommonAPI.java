@@ -3,17 +3,24 @@ package base;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.formula.functions.T;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import reporting.ExtentFactory;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -96,10 +103,31 @@ public class CommonAPI {
         }
         return driver;
     }
-
+    @Parameters({"directoryPath"})
     @AfterMethod
-    public void tearDown(){
+    public void tearDown(ITestResult testResult, @Optional String directoryPath)throws IOException{
+        String path = null;
+        String imagePath = null;
+
+        if (testResult.getStatus()== ITestResult.FAILURE){
+            path = takeScreenShot(driver, testResult.getName(), directoryPath);
+            imagePath = test.addScreenCapture(path);
+            test.log(LogStatus.FAIL, "failed test case", imagePath);
+        }else if (testResult.getStatus()== ITestResult.SUCCESS) {
+            path = takeScreenShot(driver, testResult.getName(), directoryPath);
+            imagePath = test.addScreenCapture(path);
+            test.log(LogStatus.PASS, "passed test case", imagePath);
+        }
         reports.endTest(test);
+        reports.flush();
         driver.quit();
+    }
+
+    public String takeScreenShot(WebDriver driver, String fileName, String Path) throws IOException {
+        fileName = fileName + ".png";
+        File sourceFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(sourceFile, new File (Path + fileName));
+        String destination = Path + fileName;
+        return destination;
     }
 }
