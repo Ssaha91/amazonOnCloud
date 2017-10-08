@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Amazon Automation" duration-ms="13365" started-at="2017-10-08T18:11:55Z" finished-at="2017-10-08T18:12:08Z">
+    <groups>
+    </groups>
+    <test name="Amazon Automation" duration-ms="13365" started-at="2017-10-08T18:11:55Z" finished-at="2017-10-08T18:12:08Z">
+      <class name="testPages.TestHomepage">
+        <test-method status="PASS" signature="initializeTest(boolean, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testPages.TestHomepage@34b7bfc0]" name="initializeTest" is-config="true" duration-ms="11042" started-at="2017-10-08T14:11:55Z" finished-at="2017-10-08T14:12:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Saucelabs]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[windows 10]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[61.0]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[https://www.amazon.com/]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[C:\Users\saha4\IdeaProjects\learning\Amazon\reports\tests]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTest -->
+        <test-method status="PASS" signature="clickSearchBox()[pri:0, instance:testPages.TestHomepage@34b7bfc0]" name="clickSearchBox" duration-ms="2043" started-at="2017-10-08T14:12:06Z" finished-at="2017-10-08T14:12:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickSearchBox -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testPages.TestHomepage@34b7bfc0]" name="tearDown" is-config="true" duration-ms="254" started-at="2017-10-08T14:12:08Z" finished-at="2017-10-08T14:12:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- testPages.TestHomepage -->
+    </test> <!-- Amazon Automation -->
+  </suite> <!-- Amazon Automation -->
+</testng-results>
