@@ -8,11 +8,11 @@
     <parameter name="platformVersion" value=""/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="61.0"/>
-    <parameter name="url" value="https://www.amazon.com/"/>
+    <parameter name="url" value="https://www.cheapoair.com/"/>
 
-    <test name="Amazon Automation">
+    <test name="cheapOAir homepages">
         <classes>
-            <class name="testPages.TestHomepage"/>
+            <class name="testPages.TestHomePage"/>
         </classes>
     </test>
 

@@ -12,7 +12,7 @@ public class Homepage extends CommonAPI {
     WebElement searchBox;
 
     public void goSearchBox() throws Exception {
-        String[] items = DataReader.getDataFromExcelFile("\\src\\test\\resources\\Book1.xlsx", 0);
+        String[] items = DataReader.getDataFromExcelFile("\\src\\test\\resources\\searchOnAmazon.xlsx", 0);
         for (int i = 1; i<items.length; i++){
             Thread.sleep(1500);
             searchBox.sendKeys(items[i]);

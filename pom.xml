@@ -11,6 +11,10 @@
     <modules>
         <module>Generic</module>
         <module>Amazon</module>
+        <module>Less_code_it</module>
+        <module>Twitter</module>
+        <module>GMAIL</module>
+        <module>CheapOAir</module>
     </modules>
     <dependencyManagement>
         <dependencies>
